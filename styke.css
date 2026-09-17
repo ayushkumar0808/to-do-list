@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+.container {
+  width: 400px;
+  margin-top: 40px;
+  background-color: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  border-radius: 10px;
+  padding: 40px 20px 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+#inputTask {
+  width: 80%;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 15px;
+  margin-bottom: 17px;
+
+  border: 1px solid #00000028;
+  border-radius: 3px;
+}
+#btn {
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  font-size: 15px;
+
+  border: 1px solid #00000028;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+#btn:active {
+  scale: 0.9;
+}
+.itemContainer {
+  width: 95%;
+  padding: 0px 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #faf8f8;
+  border-radius: 8px;
+}
+
+.deleteBtn {
+  position: relative;
+  left: 255px;
+  font-size: 16px;
+
+  border: 1px solid #0000007b;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+.deleteBtn:active {
+  scale: 0.9;
+}
+p {
+  font-size: 20px;
+}
