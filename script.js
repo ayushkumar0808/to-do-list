@@ -1,17 +1,8 @@
 let itemContainer = document.querySelector(".itemContainer");
 let inputTask = document.querySelector("#inputTask");
 let btn = document.querySelector("#btn");
-// let deleteBtn = document.querySelector(".deleteBtn");
-let list = [
-  {
-    id: 123,
-    text: "hello",
-  },
-  {
-    id: 12356,
-    text: "what",
-  },
-];
+
+let list = [];
 
 const handleAdd = () => {
   let obj = {
@@ -20,19 +11,34 @@ const handleAdd = () => {
   };
   list.unshift(obj);
   render(list);
+  inputTask.value = "";
 };
 btn.addEventListener("click", handleAdd);
 
 function render(arr) {
   itemContainer.innerHTML = "";
   arr.map((obj) => {
-    console.log(obj.text);
     let div = document.createElement("div");
     div.className = "item";
     div.innerHTML = `
-    <p>${obj.text}</p>
-      <button class="deleteBtn">❌</button>`;
+    <p>${obj.text}</p>`;
+    let btnDelete = document.createElement("button");
+    btnDelete.classList.add("deleteBtn");
+    btnDelete.innerText = "❌";
+    div.append(btnDelete);
+    btnDelete.onclick = () => {
+      handleDelete(obj.id);
+    };
     itemContainer.append(div);
   });
 }
 render(list);
+
+const handleDelete = (id) => {
+  console.log(id);
+  let a = list.filter((obj) => {
+    return obj.id !== id;
+  });
+  list = a;
+  render(list);
+};
