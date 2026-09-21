@@ -21,7 +21,7 @@ function render(arr) {
     let div = document.createElement("div");
     div.className = "item";
     div.innerHTML = `
-    <p>${obj.text}</p>`;
+    <p class="post">${obj.text}</p>`;
     let btnDelete = document.createElement("button");
     btnDelete.classList.add("deleteBtn");
     btnDelete.innerText = "❌";
@@ -35,10 +35,15 @@ function render(arr) {
 render(list);
 
 const handleDelete = (id) => {
-  console.log(id);
   let a = list.filter((obj) => {
     return obj.id !== id;
   });
   list = a;
   render(list);
 };
+
+itemContainer.addEventListener("click", (e) => {
+  if (e.target.className === "post") {
+    e.target.style.textDecoration = "line-through";
+  }
+});
